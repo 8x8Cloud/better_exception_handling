@@ -1,4 +1,4 @@
-module BetterExceptioHandling
+module BetterExceptionHandling
 	class Version
   
 	  MAJOR = 0
