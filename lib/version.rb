@@ -1,10 +1,12 @@
-class Version
+module BetterExceptioHandling
+	class Version
   
-  MAJOR = 0
-  MINOR = 0
-  PATCH = 1
+	  MAJOR = 0
+	  MINOR = 0
+	  PATCH = 1
 
-  def self.to_s
-    "#{MAJOR}.#{MINOR}.#{PATCH}"
-  end
+  	def self.to_s
+    	"#{MAJOR}.#{MINOR}.#{PATCH}"
+  	end
+	end
 end
