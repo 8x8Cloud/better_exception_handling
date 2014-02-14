@@ -1,36 +1,6 @@
-require 'rubygems'
 require 'rake'
 require 'rake/testtask'
 require 'rake/rdoctask'
-require 'rake/gempackagetask'
-
-PKG_FILES = FileList[
-  '[a-zA-Z]*',
-  'generators/**/*',
-  'lib/**/*',
-  'rails/**/*',
-  'tasks/**/*',
-  'test/**/*'
-]
-
-spec = Gem::Specification.new do |s|
-  s.name = "better_exception_handling"
-  s.version = "0.0.1"
-  s.author = "Andriy Tyurnikov"
-  s.email = "Andriy.Tyurnikov@gmail.com"
-  s.homepage = "https://github.com/8x8Cloud/better_exception_handling"
-  s.platform = Gem::Platform::RUBY
-  s.summary = "BeterExceptionHandling as a gem"
-  s.files = PKG_FILES.to_a
-  s.require_path = "lib"
-  s.has_rdoc = false
-  s.extra_rdoc_files = ["README"]
-end
-
-desc 'Turn this plugin into a gem.'
-Rake::GemPackageTask.new(spec) do |pkg|
-  pkg.gem_spec = spec
-end
 
 desc 'Default: run unit tests.'
 task :default => :test
