@@ -1,5 +1,4 @@
 # -*- encoding: utf-8 -*-
-$:.push File.expand_path("../lib", __FILE__)
 require "lib/version"
 
 Gem::Specification.new do |s|
@@ -15,9 +14,7 @@ Gem::Specification.new do |s|
 
   # specify any dependencies here; for example:
   s.add_development_dependency "actionmailer"
-  s.add_development_dependency "sqlite3"
   s.add_development_dependency "rdoc"
   s.add_development_dependency "pry"
   s.add_development_dependency "rake"
-  # s.add_runtime_dependency "rest-client"
 end
