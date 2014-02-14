@@ -1,3 +1,9 @@
+require "action_mailer"
+require 'better_exception_notifier'
+require 'request_exception_handler'
+ActionController::Base.send :include, RequestExceptionHandler
+
+
 module BetterExceptionHandling
   module ClassMethods
     
