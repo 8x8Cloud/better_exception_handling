@@ -10,11 +10,8 @@ Gem::Specification.new do |s|
   s.homepage    = "https://github.com/8x8cloud/better_exception_handling"
   s.summary     = "BeterExceptionHandling as a gem"
   s.description = "BeterExceptionHandling as a gem"
-
-  s.files         = `git ls-files`.split("\n")
-  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
-  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
+  s.files       = ["lib/better_exception_handling.rb"]
 
   # specify any dependencies here; for example:
   s.add_development_dependency "actionmailer"
