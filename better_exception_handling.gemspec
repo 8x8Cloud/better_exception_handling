@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-require "lib/version"
+$:.push File.expand_path("../lib", __FILE__)
 
 Gem::Specification.new do |s|
   s.name        = "better_exception_handling"
@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.summary     = "BeterExceptionHandling as a gem"
   s.description = "BeterExceptionHandling as a gem"
   s.require_paths = ["lib"]
-  s.files       = ["lib/better_exception_handling.rb"]
+  s.files         = `git ls-files`.split("\n")
 
   # specify any dependencies here; for example:
   s.add_development_dependency "actionmailer"
