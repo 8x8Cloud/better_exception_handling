@@ -1,5 +1,6 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
+require 'better_exception_handling'
 
 Gem::Specification.new do |s|
   s.name        = "better_exception_handling"
