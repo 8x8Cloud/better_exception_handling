@@ -108,8 +108,18 @@ module BetterExceptionHandling
     
     status_code = response_code_for_rescue(exception)
     status = ActionController::StatusCodes::SYMBOL_TO_STATUS_CODE[status_code] || 500
-    if (500...600).include? status
-      BetterExceptionNotifier.deliver_exception_notification(exception, self, request, clean_backtrace(exception))
+    if !status.blank? && (500...600).include? status
+      if defined?(Bugsnag)
+        Bugsnag.notify(exception)
+      else
+        unless BetterExceptionNotifier.exception_recipients.blank?
+          BetterExceptionNotifier.deliver_exception_notification(exception, self, request, clean_backtrace(exception))
+        else
+          logger.fatal "Exception raised, and no way to notify about it"
+          logger.fatal e.message
+          logger.fatal e.backtrace
+        end
+      end
     end
   end
   
